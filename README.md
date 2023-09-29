@@ -1,2 +1,2 @@
-# weekly-meal-randomizer
+# MagicMenu
 Randomized Weekly Meal Planning Application 
