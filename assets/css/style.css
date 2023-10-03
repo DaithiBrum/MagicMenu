@@ -53,4 +53,40 @@
     flex: 50%; /* Take half of the available space */
   }
 
+
+  .Generate, .Refresh{
+    cursor: pointer;
+   left: 30%;
+   margin-left:10% ;
+   position: relative;
+    font-size: 25px;
+  }
+
+  h2{
+    display: flex;
+    justify-content: center;
+    border-bottom:thick double #89CFF0;
+    margin: 30px;
+    font-size: 30px;
+  }
+
+  .tile{
+margin: 0;
+position: absolute;
+top: 25%;
+margin-left: 20%;
+  }
+
+  h1{
+    background-color: #89CFF0;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 100px;
+  }
+    .container{
+    color: #89CFF0;
+  }
+
   /*End Options and Selections Section*/
+
