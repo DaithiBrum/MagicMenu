@@ -27,7 +27,7 @@
                 <a href="#Sat"><input  id="Saturday" class="button" type="submit" value="Sa"></a>
                 <a href="#Sun"><input  id="Sunday" class="button" type="submit" value="Su"></a>
             </div>
-            <div>
+            <div id="disRecipe">
                 
             </div>
         </section>
@@ -119,13 +119,36 @@
 
 
         <!-- david options and selections-->
+
+          <p>Select the types of food that you want to exclude from the menu:</p>
+
+        <section>
+          <p>Select the types of food that you want to exclude from the menu:</p>
+          <div class="checkboxes">
+            <label><input type="checkbox" name="food" value="dairy">Dairy</label>
+            <label><input type="checkbox" name="food" value="gluten">Gluten</label>
+            <label><input type="checkbox" name="food" value="nuts">Nuts</label>
+            <label><input type="checkbox" name="food" value="seafood">Seafood</label>
+            <label><input type="checkbox" name="food" value="eggs">Eggs</label>
+            <label><input type="checkbox" name="food" value="soy">Soy</label>
+          </div>
+          <button id="generate">Generate Menu</button>
+          <div id="menu"></div>
+          
+
+        </section>
+                      
         <section>
             <div class="container">
                 <div class="row">
                   <div class="col-md-6">
                     <h3>Allergies</h3>
                     <div class="buttons">
-                      <button class="btn btn-default"><img src="assets\icons\013-milk bottle.png" alt="Gluten"> Dairy</button>
+
+                      
+
+                      <button class="btn btn-default"><img src="assets\icons\milk bottle.png" alt="Dairy"> Dairy</button>
+
                       <button class="btn btn-default"><img src="assets\icons\gluten-free.png" alt="Gluten"> Gluten</button>
                       <button class="btn btn-default"><img src="assets\icons\nut.png" alt="Nuts"> Nuts</button>
                       <button class="btn btn-default"><img src="assets/icons/sea-food.png" alt="Seafood"> Seafood</button>
@@ -150,21 +173,25 @@
 
 
         </section>
+       
 
 
         <!--kroger section madison-->
 
         <section>
-            <div>Items available at local grocery store: </div>
+            <div><h2>Recipe Items by City:</h2>
+                <input type="text" id="city"/>
+                <button id="search">Search</button>
+            </div>
             <div id="krogerAds"></div>
             <div class="row">
                 <div class="column" style="background-color:#FFB695;">
                     <h2>Column 1</h2>
-                    <p>Data..</p>
+                    <p>Data...</p>
                 </div>
                 <div class="column" style="background-color:#96D1CD;">
                     <h2>Column 2</h2>
-                    <p>Data..</p>
+                    <p>Data...</p>
                 </div>
             </div>
 
