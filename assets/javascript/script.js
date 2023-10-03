@@ -1,4 +1,33 @@
 
+//Kroger Grocery Button and Function
+
+const apiKey = ""
+var container = $('#krogerAds')
+
+$('#groceryButton').on('click', function(){
+    console.log('do you work');
+    const city = $("#city").val();
+    getCityGrocery(city);
+})
+function getCityGrocery(city) {
+    var groceryUrl = "https://api.kroger.com/v1/" + city + apiKey;
+
+    
+
+    fetch(groceryUrl)
+    .then(function(response) {
+        return response.json();
+    })
+        .then(function(data) {
+
+            container.append(`<p>weather: ${data.main.temp}</p>`);
+            container.append(`<p>wind speed: ${data.wind.speed}</p>`);
+            container.append(`<p>humidity: ${data.main.humidity}</p>`);
+        })
+        .then(function(){
+            getFiveDay(city);
+        })
+}
 var apiKey = 'cb87a3ad2d2758cc23fc980f34800143';
 var apiId = '0779033c';
 
@@ -85,4 +114,4 @@ var menuItems = [
   // Get the generate button and add a click event listener to call the generateMenu function
   var generateButton = document.getElementById("generate");
   generateButton.addEventListener("click", generateMenu);
-  
+ 
