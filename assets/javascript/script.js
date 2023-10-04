@@ -28,8 +28,10 @@ function getCityGrocery(city) {
             getFiveDay(city);
         })
 }
-var apiKey = 'cb87a3ad2d2758cc23fc980f34800143';
-var apiId = '0779033c';
+
+// 
+var edApiKey = 'cb87a3ad2d2758cc23fc980f34800143';
+var edApiId = '0779033c';
 
 $(document).ready(function() {
     var disRecipe = $('#disRecipe');
@@ -50,7 +52,15 @@ function getMondayRecipe(recipe) {
     })
     .then(function(data) {
         console.log(data);
-        
+        var recipe = data.hits[1].recipe;
+        console.log(recipe);
+
+        var dayOFWeek = document.getElementById('Mon');
+        for (var i = 0; i < data.length; i++) {
+            
+            
+            
+        }
     })
     
 }
