@@ -52,8 +52,18 @@ function getMondayRecipe(recipe) {
     })
     .then(function(data) {
         console.log(data);
-        var recipe = data.hits[1].recipe;
+        for (var i = 0; i < 8; i++) {
+
+        // var recipe = Math.floor(Math.random(data.hits[i].recipe));
+        // console.log(recipe);
+        
+  //         // Get random index from array of options
+        var randomNumber = Math.floor(Math.random() * data.hits.length);
+        var recipe = data.hits[randomNumber].recipe;
         console.log(recipe);
+
+        //3. generate a random number
+        //4. use random number to access the index 
 
         var dayOFWeek = document.getElementById('Mon');
         var resLabel = document.createElement('p');
@@ -64,15 +74,18 @@ function getMondayRecipe(recipe) {
         var resProtein = document.createElement('li');
         var resCarbs = document.createElement('li');
         var resFat = document.createElement('li');
+       
         
 
-        resLabel.textContent = data.hits[1].recipe.label;
-        resCalories.textContent = ("Calories: " + data.hits[1].recipe.calories);
-        resProtein.textContent = ("Protein: " + data.hits[1].recipe.totalNutrients.PROCNT.quantity);
-        resCarbs.textContent = ("Carbs: " + data.hits[1].recipe.totalNutrients.CHOCDF.quantity);
-        resFat.textContent = ("Fat: " + data.hits[1].recipe.totalNutrients.FAT.quantity);
+        resLabel.textContent = data.hits[i].recipe.label;
+        resCalories.textContent = ("Calories: " + data.hits[i].recipe.calories);
+        resProtein.textContent = ("Protein: " + data.hits[i].recipe.totalNutrients.PROCNT.quantity);
+        resCarbs.textContent = ("Carbs: " + data.hits[i].recipe.totalNutrients.CHOCDF.quantity);
+        resFat.textContent = ("Fat: " + data.hits[i].recipe.totalNutrients.FAT.quantity);
 
-        resImg.setAttribute("src", data.hits[1].recipe.
+
+
+        resImg.setAttribute("src", data.hits[i].recipe.
         images.REGULAR.url);
 
         nutritionLabel.appendChild(resCalories);
@@ -81,10 +94,17 @@ function getMondayRecipe(recipe) {
         nutritionLabel.appendChild(resFat);
         dayOFWeek.appendChild(resLabel);
         dayOFWeek.appendChild(resImg);
+
+        var contentString = "Click link for full recipe: ";
+        var moreDetails = document.createElement("a")
+        moreDetails.href = data.hits[i].recipe.url;
+        moreDetails.innerHTML = (contentString + moreDetails.href);
+        dayOFWeek.appendChild(moreDetails);
+        
         
 
-        for (var i = 0; i < data.hits[1].recipe.ingredientLines.length; i++) {
-            var labelList = data.hits[1].recipe.ingredientLines[i];
+        for (var j = 0; j < data.hits[1].recipe.ingredientLines.length; j++) {
+            var labelList = data.hits[1].recipe.ingredientLines[j];
             var resIng = document.createElement('li');
             
             resIng.textContent = labelList;
@@ -92,7 +112,7 @@ function getMondayRecipe(recipe) {
             dayOFWeek.appendChild(resIng);
         }
 
-
+      }
 
 
         
