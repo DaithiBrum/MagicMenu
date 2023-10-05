@@ -1,42 +1,12 @@
 
-//Kroger Grocery Button and Function
-
-const apiKey = ""
-var container = $('#krogerAds')
-
-$('#groceryButton').on('click', function(){
-    console.log('do you work');
-    const city = $("#city").val();
-    getCityGrocery(city);
-})
-function getCityGrocery(city) {
-    var groceryUrl = "https://api.kroger.com/v1/" + city + apiKey;
-
-    
-
-    fetch(groceryUrl)
-    .then(function(response) {
-        return response.json();
-    })
-        .then(function(data) {
-
-            container.append(`<p>weather: ${data.main.temp}</p>`);
-            container.append(`<p>wind speed: ${data.wind.speed}</p>`);
-            container.append(`<p>humidity: ${data.main.humidity}</p>`);
-        })
-        .then(function(){
-            getFiveDay(city);
-        })
-}
-
-// 
 var edApiKey = 'cb87a3ad2d2758cc23fc980f34800143';
 var edApiId = '0779033c';
+var allDays = ['Sun','Mon', 'Tue', 'Wed', 'Thu','Fri', 'Sat']
 
 $(document).ready(function() {
     var disRecipe = $('#disRecipe');
 
-    $('#Monday').on('click', function() {
+    $('.Generate').on('click', function() {
         console.log('do you work');
         getMondayRecipe()
     })
@@ -52,55 +22,52 @@ function getMondayRecipe(recipe) {
     })
     .then(function(data) {
         console.log(data);
-        for (var i = 0; i < 8; i++) {
+        for (var i = 0; i < allDays.length; i++) {
 
-        // var recipe = Math.floor(Math.random(data.hits[i].recipe));
-        // console.log(recipe);
-        
-  //         // Get random index from array of options
         var randomNumber = Math.floor(Math.random() * data.hits.length);
         var recipe = data.hits[randomNumber].recipe;
         console.log(recipe);
 
-        //3. generate a random number
-        //4. use random number to access the index 
-
-        var dayOFWeek = document.getElementById('Mon');
+        var dayOFWeek = document.getElementById(allDays[i]);
+      
         var resLabel = document.createElement('p');
         var resImg = document.createElement('img');
-        var nutritionLabel = document.getElementById('nutrition-label');
-    
-        var resCalories = document.createElement('li');
-        var resProtein = document.createElement('li');
-        var resCarbs = document.createElement('li');
-        var resFat = document.createElement('li');
+        var nutritionLabel = document.createElement('div');
+        nutritionLabel.classList.add('nutrition-label')
+          nutritionLabel.innerHTML = `
+          <li>Calories: ${Math.trunc(data.hits[i].recipe.calories)} </li>
+          <li>Protein: ${Math.trunc(data.hits[i].recipe.totalNutrients.PROCNT.quantity)} </li>
+          <li>Carbs: ${Math.trunc(data.hits[i].recipe.totalNutrients.CHOCDF.quantity)} </li>
+          <li>Fat: ${Math.trunc(data.hits[i].recipe.totalNutrients.FAT.quantity)} </li>
+          `
+
+        // var resCalories = document.createElement('li');
+        // var resProtein = document.createElement('li');
+        // var resCarbs = document.createElement('li');
+        // var resFat = document.createElement('li');
        
-        
-
         resLabel.textContent = data.hits[i].recipe.label;
-        resCalories.textContent = ("Calories: " + data.hits[i].recipe.calories);
-        resProtein.textContent = ("Protein: " + data.hits[i].recipe.totalNutrients.PROCNT.quantity);
-        resCarbs.textContent = ("Carbs: " + data.hits[i].recipe.totalNutrients.CHOCDF.quantity);
-        resFat.textContent = ("Fat: " + data.hits[i].recipe.totalNutrients.FAT.quantity);
-
-
+        // resCalories.textContent = ("Calories: " + Math.trunc(data.hits[i].recipe.calories));
+        // resProtein.textContent = ("Protein: " + Math.trunc(data.hits[i].recipe.totalNutrients.PROCNT.quantity));
+        // resCarbs.textContent = ("Carbs: " + Math.trunc(data.hits[i].recipe.totalNutrients.CHOCDF.quantity));
+        // resFat.textContent = ("Fat: " + Math.trunc(data.hits[i].recipe.totalNutrients.FAT.quantity));
 
         resImg.setAttribute("src", data.hits[i].recipe.
         images.REGULAR.url);
 
-        nutritionLabel.appendChild(resCalories);
-        nutritionLabel.appendChild(resProtein);
-        nutritionLabel.appendChild(resCarbs);
-        nutritionLabel.appendChild(resFat);
-        dayOFWeek.appendChild(resLabel);
-        dayOFWeek.appendChild(resImg);
+        // nutritionLabel.appendChild(resCalories);
+        // nutritionLabel.appendChild(resProtein);
+        // nutritionLabel.appendChild(resCarbs);
+        // nutritionLabel.appendChild(resFat);
 
         var contentString = "Click link for full recipe: ";
         var moreDetails = document.createElement("a")
         moreDetails.href = data.hits[i].recipe.url;
         moreDetails.innerHTML = (contentString + moreDetails.href);
+
+        dayOFWeek.appendChild(resLabel);
+        dayOFWeek.appendChild(resImg);
         dayOFWeek.appendChild(moreDetails);
-        
         
 
         for (var j = 0; j < data.hits[1].recipe.ingredientLines.length; j++) {
@@ -111,6 +78,8 @@ function getMondayRecipe(recipe) {
         
             dayOFWeek.appendChild(resIng);
         }
+        dayOFWeek.appendChild(nutritionLabel)
+
 
       }
 
@@ -126,7 +95,47 @@ function getMondayRecipe(recipe) {
     
     
 }
+//Kroger Grocery Button and Function
 
+var container = $('#cocktail')
+
+$('#cocktailButton').on('click', function(){
+    console.log('do you work');
+    getCityGrocery();
+})
+function getCityGrocery() {
+    var cocktailAPI = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+
+    fetch(cocktailAPI)
+    .then(function(response) {
+        return response.json();
+    })
+        .then(function(data) {
+          console.log(data);
+
+          // for (var k = 0; k < data.drinks[k].length; k++) {
+            // var labelList = data.hits[1].recipe.ingredientLines[j];
+            // var resIng = document.createElement('li');
+            
+            // resIng.textContent = labelList;
+        
+            // dayOFWeek.appendChild(resIng);
+
+          var randNumber = Math.floor(Math.random() * data.drinks.length);
+          var drinkRecipe = data.drinks[randNumber].strInstructions;
+          console.log(drinkRecipe);
+
+          var drinkImg = document.createElement('img');
+          drinkImg.setAttribute("src", data.drinks[randNumber].strDrinkThumb);
+          container.append(drinkImg);
+
+            // container.append(`<img> ${data.drinks[randNumber].strDrinkThumb}</img>`);  
+            container.append(`<p>Drink Name: ${data.drinks[randNumber].strDrink}</p>`);
+            container.append(`<p>Alcoholic: ${data.drinks[randNumber].strAlcoholic}</p>`);
+            container.append(`<p>Instructions: ${data.drinks[randNumber].strInstructions}</p>`);
+          //}
+        })
+}    
 
 
 });
