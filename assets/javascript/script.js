@@ -56,12 +56,54 @@ function getMondayRecipe(recipe) {
         console.log(recipe);
 
         var dayOFWeek = document.getElementById('Mon');
-        for (var i = 0; i < data.length; i++) {
+        var resLabel = document.createElement('p');
+        var resImg = document.createElement('img');
+        var nutritionLabel = document.getElementById('nutrition-label');
+    
+        var resCalories = document.createElement('li');
+        var resProtein = document.createElement('li');
+        var resCarbs = document.createElement('li');
+        var resFat = document.createElement('li');
+        
+
+        resLabel.textContent = data.hits[1].recipe.label;
+        resCalories.textContent = ("Calories: " + data.hits[1].recipe.calories);
+        resProtein.textContent = ("Protein: " + data.hits[1].recipe.totalNutrients.PROCNT.quantity);
+        resCarbs.textContent = ("Carbs: " + data.hits[1].recipe.totalNutrients.CHOCDF.quantity);
+        resFat.textContent = ("Fat: " + data.hits[1].recipe.totalNutrients.FAT.quantity);
+
+        resImg.setAttribute("src", data.hits[1].recipe.
+        images.REGULAR.url);
+
+        nutritionLabel.appendChild(resCalories);
+        nutritionLabel.appendChild(resProtein);
+        nutritionLabel.appendChild(resCarbs);
+        nutritionLabel.appendChild(resFat);
+        dayOFWeek.appendChild(resLabel);
+        dayOFWeek.appendChild(resImg);
+        
+
+        for (var i = 0; i < data.hits[1].recipe.ingredientLines.length; i++) {
+            var labelList = data.hits[1].recipe.ingredientLines[i];
+            var resIng = document.createElement('li');
             
-            
-            
+            resIng.textContent = labelList;
+        
+            dayOFWeek.appendChild(resIng);
         }
-    })
+
+
+
+
+        
+
+        //for (var i = 0; i < data.length; i++) {
+             
+        })
+       // .then(function(recipe) {
+            
+       // })
+    
     
 }
 
