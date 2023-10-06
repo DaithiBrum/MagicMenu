@@ -10,7 +10,7 @@ $(document).ready(function() {
         
         $("#Sun").children().not(':first').remove()
         $("#Mon").children().not(':first').remove()
-        $("#Tus").children().not(':first').remove()
+        $("#Tue").children().not(':first').remove()
         $("#Wed").children().not(':first').remove()
         $("#Thu").children().not(':first').remove()
         $("#Fri").children().not(':first').remove()
@@ -96,6 +96,9 @@ var container = $('#cocktail')
 
 $('#cocktailButton').on('click', function(){
     console.log('do you work');
+
+    $("#cocktail").children().remove()
+
     getCityGrocery();
 })
 function getCityGrocery() {
