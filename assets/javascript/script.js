@@ -7,6 +7,15 @@ $(document).ready(function() {
 
     $('.Generate').on('click', function() {
         console.log('do you work');
+        
+        $("#Sun").children().not(':first').remove()
+        $("#Mon").children().not(':first').remove()
+        $("#Tus").children().not(':first').remove()
+        $("#Wed").children().not(':first').remove()
+        $("#Thu").children().not(':first').remove()
+        $("#Fri").children().not(':first').remove()
+        $("#Sat").children().not(':first').remove()
+
         getMondayRecipe()
     })
 
@@ -138,8 +147,15 @@ function getCityGrocery() {
 //     var checkboxes = document.getElementsByName("food");
 //     var menu = document.getElementById("menu");
   
+
+    // Clear the menu div
+
+
+    //clear out existing data from days of the week
+
 //     // Clear the menu div
 //     menu.innerHTML = "";
+
   
 //     // Loop through the checkboxes and store the checked values in an array
 //     var checkedFoods = [];
@@ -172,3 +188,5 @@ function getCityGrocery() {
 //   var generateButton = document.getElementById("generate");
 //   generateButton.addEventListener("click", generateMenu);
  
+
+
