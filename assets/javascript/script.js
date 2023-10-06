@@ -1,5 +1,5 @@
 
-var edApiKey = 'cb87a3ad2d2758cc23fc980f34800143';
+var edApiId = 'cb87a3ad2d2758cc23fc980f34800143';
 var edApiId = '0779033c';
 var allDays = ['Sun','Mon', 'Tue', 'Wed', 'Thu','Fri', 'Sat']
 
@@ -49,9 +49,9 @@ function getMondayRecipe(recipe) {
           <li>Fat: ${Math.trunc(data.hits[i].recipe.totalNutrients.FAT.quantity)} </li>
           `
 
-        resLabel.textContent = data.hits[i].recipe.label;
+        resLabel.textContent = data.hits[randomNumber].recipe.label;
 
-        resImg.setAttribute("src", data.hits[i].recipe.
+        resImg.setAttribute("src", data.hits[randomNumber].recipe.
         images.REGULAR.url);
 
         var contentString = "Click link for full recipe: ";
