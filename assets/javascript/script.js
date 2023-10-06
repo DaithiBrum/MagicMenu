@@ -52,10 +52,10 @@ function getMondayRecipe(recipe) {
         var nutritionLabel = document.createElement('div');
         nutritionLabel.classList.add('nutrition-label')
           nutritionLabel.innerHTML = `
-          <li>Calories: ${Math.trunc(data.hits[i].recipe.calories)} </li>
-          <li>Protein: ${Math.trunc(data.hits[i].recipe.totalNutrients.PROCNT.quantity)} </li>
-          <li>Carbs: ${Math.trunc(data.hits[i].recipe.totalNutrients.CHOCDF.quantity)} </li>
-          <li>Fat: ${Math.trunc(data.hits[i].recipe.totalNutrients.FAT.quantity)} </li>
+          <ul>Calories: ${Math.trunc(data.hits[i].recipe.calories)} </ul>
+          <ul>Protein: ${Math.trunc(data.hits[i].recipe.totalNutrients.PROCNT.quantity)} </ul>
+          <ul>Carbs: ${Math.trunc(data.hits[i].recipe.totalNutrients.CHOCDF.quantity)} </ul>
+          <ul>Fat: ${Math.trunc(data.hits[i].recipe.totalNutrients.FAT.quantity)} </ul>
           `
 
         resLabel.textContent = data.hits[i].recipe.label;
@@ -75,7 +75,7 @@ function getMondayRecipe(recipe) {
 
         for (var j = 0; j < data.hits[1].recipe.ingredientLines.length; j++) {
             var labelList = data.hits[1].recipe.ingredientLines[j];
-            var resIng = document.createElement('li');
+            var resIng = document.createElement('ul');
             
             resIng.textContent = labelList;
         
@@ -119,9 +119,9 @@ function getCityGrocery() {
           drinkImg.setAttribute("src", data.drinks[randNumber].strDrinkThumb);
           container.append(drinkImg);
  
-            container.append(`<p>Drink Name: ${data.drinks[randNumber].strDrink}</p>`);
-            container.append(`<p>Alcoholic: ${data.drinks[randNumber].strAlcoholic}</p>`);
-            container.append(`<p>Instructions: ${data.drinks[randNumber].strInstructions}</p>`);
+            container.append(`<li>Drink Name: ${data.drinks[randNumber].strDrink}</li>`);
+            container.append(`<li>Alcoholic: ${data.drinks[randNumber].strAlcoholic}</li>`);
+            container.append(`<li>Instructions: ${data.drinks[randNumber].strInstructions}</li>`);
 
         })
 }    
