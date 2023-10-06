@@ -1,7 +1,8 @@
 /*Styling for the options and selections section */
+
 .btn {
     background-color:#96D1CD; /* Blue background */
-    border:transparent; /* Add border */
+    border:transparent; /* Add border */  
     border-radius: 10%; /* Radius to form oval*/
     color: white; /* White text */
     padding: 12px 16px; /* Some padding */
