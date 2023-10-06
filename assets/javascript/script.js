@@ -4,7 +4,6 @@ var edApiId = '0779033c';
 var allDays = ['Sun','Mon', 'Tue', 'Wed', 'Thu','Fri', 'Sat']
 
 $(document).ready(function() {
-    var disRecipe = $('#disRecipe');
 
     $('.Generate').on('click', function() {
         console.log('do you work');
@@ -21,9 +20,13 @@ $(document).ready(function() {
     })
 
 function getMondayRecipe(recipe) {
-    // var apiUrl = 'https://api.edamam.com/api/recipes/v2?type=public&app_id=' + apiId + '&app_key=' + apiKey;
-    var apiUrl = 'https:api.edamam.com/api/recipes/v2?type=public&app_id=0779033c&app_key=cb87a3ad2d2758cc23fc980f34800143&diet=high-protein&health=gluten-free&cuisineType=American&mealType=Dinner&imageSize=REGULAR';
+    // var apiUrl = 'https://api.edamam.com/api/recipes/v2?type=public&app_id=0779033c_key=cb87a3ad2d2758cc23fc980f34800143&diet=high-protein';
 
+
+    // var apiUrl = 'https:api.edamam.com/api/recipes/v2?type=public&app_id=0779033c&app_key=cb87a3ad2d2758cc23fc980f34800143&diet=high-protein&health=gluten-free&cuisineType=American&mealType=Dinner&imageSize=REGULAR';
+
+
+    var apiUrl = 'https://api.edamam.com/api/recipes/v2?type=public&app_id=0779033c&app_key=cb87a3ad2d2758cc23fc980f34800143&mealType=Dinner&dishType=Main%20course&imageSize=REGULAR';
 
     fetch(apiUrl)
     .then(function(response) {
@@ -31,6 +34,11 @@ function getMondayRecipe(recipe) {
     })
     .then(function(data) {
         console.log(data);
+
+        // var randomNumber = Math.floor(Math.random() * data.hits.length);
+        // var recipe = data.hits[randomNumber].recipe;
+        // console.log(recipe);
+
         for (var i = 0; i < allDays.length; i++) {
 
         var randomNumber = Math.floor(Math.random() * data.hits.length);
@@ -50,24 +58,10 @@ function getMondayRecipe(recipe) {
           <li>Fat: ${Math.trunc(data.hits[i].recipe.totalNutrients.FAT.quantity)} </li>
           `
 
-        // var resCalories = document.createElement('li');
-        // var resProtein = document.createElement('li');
-        // var resCarbs = document.createElement('li');
-        // var resFat = document.createElement('li');
-       
         resLabel.textContent = data.hits[i].recipe.label;
-        // resCalories.textContent = ("Calories: " + Math.trunc(data.hits[i].recipe.calories));
-        // resProtein.textContent = ("Protein: " + Math.trunc(data.hits[i].recipe.totalNutrients.PROCNT.quantity));
-        // resCarbs.textContent = ("Carbs: " + Math.trunc(data.hits[i].recipe.totalNutrients.CHOCDF.quantity));
-        // resFat.textContent = ("Fat: " + Math.trunc(data.hits[i].recipe.totalNutrients.FAT.quantity));
 
         resImg.setAttribute("src", data.hits[i].recipe.
         images.REGULAR.url);
-
-        // nutritionLabel.appendChild(resCalories);
-        // nutritionLabel.appendChild(resProtein);
-        // nutritionLabel.appendChild(resCarbs);
-        // nutritionLabel.appendChild(resFat);
 
         var contentString = "Click link for full recipe: ";
         var moreDetails = document.createElement("a")
@@ -91,20 +85,12 @@ function getMondayRecipe(recipe) {
 
 
       }
-
-
         
-
-        //for (var i = 0; i < data.length; i++) {
-             
-        })
-       // .then(function(recipe) {
-            
-       // })
-    
+      
+      
+        })  
     
 }
-//Kroger Grocery Button and Function
 
 var container = $('#cocktail')
 
@@ -122,14 +108,6 @@ function getCityGrocery() {
         .then(function(data) {
           console.log(data);
 
-          // for (var k = 0; k < data.drinks[k].length; k++) {
-            // var labelList = data.hits[1].recipe.ingredientLines[j];
-            // var resIng = document.createElement('li');
-            
-            // resIng.textContent = labelList;
-        
-            // dayOFWeek.appendChild(resIng);
-
           var randNumber = Math.floor(Math.random() * data.drinks.length);
           var drinkRecipe = data.drinks[randNumber].strInstructions;
           console.log(drinkRecipe);
@@ -137,75 +115,78 @@ function getCityGrocery() {
           var drinkImg = document.createElement('img');
           drinkImg.setAttribute("src", data.drinks[randNumber].strDrinkThumb);
           container.append(drinkImg);
-
-            // container.append(`<img> ${data.drinks[randNumber].strDrinkThumb}</img>`);  
+ 
             container.append(`<p>Drink Name: ${data.drinks[randNumber].strDrink}</p>`);
             container.append(`<p>Alcoholic: ${data.drinks[randNumber].strAlcoholic}</p>`);
             container.append(`<p>Instructions: ${data.drinks[randNumber].strInstructions}</p>`);
-          //}
+
         })
 }    
-
 
 });
 
 
-// example link with selections: 
-// https://api.edamam.com/api/recipes/v2?type=public&app_id=0779033c&app_key=cb87a3ad2d2758cc23fc980f34800143&diet=high-protein&health=gluten-free&cuisineType=American&mealType=Dinner&imageSize=REGULAR
+// // example link with selections: 
+// // https://api.edamam.com/api/recipes/v2?type=public&app_id=0779033c&app_key=cb87a3ad2d2758cc23fc980f34800143&diet=high-protein&health=gluten-free&cuisineType=American&mealType=Dinner&imageSize=REGULAR
 
-/* A sample array of menu items, you can replace this with your own data */
-var menuItems = [
-    {name: "Cheeseburger", ingredients: ["beef", "cheese", "bread", "lettuce", "tomato"]},
-    {name: "Salmon Salad", ingredients: ["salmon", "lettuce", "cucumber", "olive oil", "lemon"]},
-    {name: "Peanut Butter Cookies", ingredients: ["peanut butter", "flour", "sugar", "eggs", "butter"]},
-    {name: "Veggie Stir-Fry", ingredients: ["tofu", "soy sauce", "rice", "broccoli", "carrot", "onion"]},
-    {name: "Cheese Pizza", ingredients: ["cheese", "tomato sauce", "bread", "oregano"]},
-    {name: "Fruit Smoothie", ingredients: ["banana", "strawberry", "milk", "honey"]}
-  ]; 
+// /* A sample array of menu items, you can replace this with your own data */
+// var menuItems = [
+//     {name: "Cheeseburger", ingredients: ["beef", "cheese", "bread", "lettuce", "tomato"]},
+//     {name: "Salmon Salad", ingredients: ["salmon", "lettuce", "cucumber", "olive oil", "lemon"]},
+//     {name: "Peanut Butter Cookies", ingredients: ["peanut butter", "flour", "sugar", "eggs", "butter"]},
+//     {name: "Veggie Stir-Fry", ingredients: ["tofu", "soy sauce", "rice", "broccoli", "carrot", "onion"]},
+//     {name: "Cheese Pizza", ingredients: ["cheese", "tomato sauce", "bread", "oregano"]},
+//     {name: "Fruit Smoothie", ingredients: ["banana", "strawberry", "milk", "honey"]}
+//   ]; 
   
   
  
-    // A function to generate a random menu based on the selected checkboxes
-    function generateMenu() {
-    // Get the checkboxes and the menu div
-    var checkboxes = document.getElementsByName("food");
-    var menu = document.getElementById("menu");
+//     // A function to generate a random menu based on the selected checkboxes
+//     function generateMenu() {
+//     // Get the checkboxes and the menu div
+//     var checkboxes = document.getElementsByName("food");
+//     var menu = document.getElementById("menu");
   
+
     // Clear the menu div
-    menu.innerHTML = "";
+
 
     //clear out existing data from days of the week
+
+//     // Clear the menu div
+//     menu.innerHTML = "";
+
   
-    // Loop through the checkboxes and store the checked values in an array
-    var checkedFoods = [];
-    for (var i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].checked) {
-        checkedFoods.push(checkboxes[i].value);
-      }
-    }
+//     // Loop through the checkboxes and store the checked values in an array
+//     var checkedFoods = [];
+//     for (var i = 0; i < checkboxes.length; i++) {
+//       if (checkboxes[i].checked) {
+//         checkedFoods.push(checkboxes[i].value);
+//       }
+//     }
   
-    // Loop through the menu items and filter out the ones that contain the checked foods
-    var filteredMenu = menuItems.filter(function(item) {
-      // Check if any of the item's ingredients are in the checked foods array
-      return !item.ingredients.some(function(ingredient) {
-        return checkedFoods.includes(ingredient);
-      });
-    });
+//     // Loop through the menu items and filter out the ones that contain the checked foods
+//     var filteredMenu = menuItems.filter(function(item) {
+//       // Check if any of the item's ingredients are in the checked foods array
+//       return !item.ingredients.some(function(ingredient) {
+//         return checkedFoods.includes(ingredient);
+//       });
+//     });
   
-    // If the filtered menu is not empty, randomly pick one item and display it
-    if (filteredMenu.length > 0) {
-      var randomIndex = Math.floor(Math.random() * filteredMenu.length);
-      var randomItem = filteredMenu[randomIndex];
-      menu.innerHTML = "<p>Your random menu item is: " + randomItem.name + "</p>";
-    } else {
-      // If the filtered menu is empty, display a message
-      menu.innerHTML = "<p>Sorry, there are no menu items that match your preferences.</p>";
-    }
-  }
+//     // If the filtered menu is not empty, randomly pick one item and display it
+//     if (filteredMenu.length > 0) {
+//       var randomIndex = Math.floor(Math.random() * filteredMenu.length);
+//       var randomItem = filteredMenu[randomIndex];
+//       menu.innerHTML = "<p>Your random menu item is: " + randomItem.name + "</p>";
+//     } else {
+//       // If the filtered menu is empty, display a message
+//       menu.innerHTML = "<p>Sorry, there are no menu items that match your preferences.</p>";
+//     }
+//   }
   
-  // Get the generate button and add a click event listener to call the generateMenu function
-  var generateButton = document.getElementById("generate");
-  generateButton.addEventListener("click", generateMenu);
+//   // Get the generate button and add a click event listener to call the generateMenu function
+//   var generateButton = document.getElementById("generate");
+//   generateButton.addEventListener("click", generateMenu);
  
 
 
