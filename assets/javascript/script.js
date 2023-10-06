@@ -52,10 +52,10 @@ function getMondayRecipe(recipe) {
         var nutritionLabel = document.createElement('div');
         nutritionLabel.classList.add('nutrition-label')
           nutritionLabel.innerHTML = `
-          <li>Calories: ${Math.trunc(data.hits[i].recipe.calories)} </li>
-          <li>Protein: ${Math.trunc(data.hits[i].recipe.totalNutrients.PROCNT.quantity)} </li>
-          <li>Carbs: ${Math.trunc(data.hits[i].recipe.totalNutrients.CHOCDF.quantity)} </li>
-          <li>Fat: ${Math.trunc(data.hits[i].recipe.totalNutrients.FAT.quantity)} </li>
+          <li>Calories: ${Math.trunc(data.hits[randomNumber].recipe.calories)} </li>
+          <li>Protein: ${Math.trunc(data.hits[randomNumber].recipe.totalNutrients.PROCNT.quantity)} </li>
+          <li>Carbs: ${Math.trunc(data.hits[randomNumber].recipe.totalNutrients.CHOCDF.quantity)} </li>
+          <li>Fat: ${Math.trunc(data.hits[randomNumber].recipe.totalNutrients.FAT.quantity)} </li>
           `
 
         resLabel.textContent = data.hits[randomNumber].recipe.label;
@@ -65,7 +65,7 @@ function getMondayRecipe(recipe) {
 
         var contentString = "Click link for full recipe: ";
         var moreDetails = document.createElement("a")
-        moreDetails.href = data.hits[i].recipe.url;
+        moreDetails.href = data.hits[randomNumber].recipe.url;
         moreDetails.innerHTML = (contentString + moreDetails.href);
 
         dayOFWeek.appendChild(resLabel);
@@ -73,8 +73,8 @@ function getMondayRecipe(recipe) {
         dayOFWeek.appendChild(moreDetails);
         
 
-        for (var j = 0; j < data.hits[1].recipe.ingredientLines.length; j++) {
-            var labelList = data.hits[1].recipe.ingredientLines[j];
+        for (var j = 0; j < data.hits[randomNumber].recipe.ingredientLines.length; j++) {
+            var labelList = data.hits[randomNumber].recipe.ingredientLines[j];
             var resIng = document.createElement('li');
             
             resIng.textContent = labelList;
@@ -113,6 +113,7 @@ function getCityGrocery() {
 
           var randNumber = Math.floor(Math.random() * data.drinks.length);
           var drinkRecipe = data.drinks[randNumber].strInstructions;
+
           console.log(drinkRecipe);
 
           var drinkImg = document.createElement('img');
@@ -120,6 +121,18 @@ function getCityGrocery() {
           container.append(drinkImg);
  
             container.append(`<p>Drink Name: ${data.drinks[randNumber].strDrink}</p>`);
+
+            //loop for ingridient list
+
+            // for (var h = 0; h < data.drinks[randNumber].strIngredient[h]; h++) {
+            //     var cocktailLabelList = data.drinks[randNumber].recipe.ingredientLines[h];
+            //     var cocktailIng = document.createElement('li');
+                
+            //     cocktailIng.textContent = cocktailLabelList;
+            
+            //     container.appendChild(cocktailIng);
+            // }
+
             container.append(`<p>Alcoholic: ${data.drinks[randNumber].strAlcoholic}</p>`);
             container.append(`<p>Instructions: ${data.drinks[randNumber].strInstructions}</p>`);
 
