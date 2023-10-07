@@ -1,147 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>MagicMenu</title>
+  <!-- Meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="MagicMenu is an application that helps you plan your meals for the week based on your preferences and allergies.">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Title -->
+  <title>MagicMenu</title>
 </head>
+
 <body>
 
-    <!--Title -->
-    <header>
-        <h1>MagicMenu</h1>
-                   
-          <div class="tile is-vertical is-1 box" >
-              <a href="#Mon"> <input  id="Monday" class="button" type="submit" value="Mo"  ></a>
-              <a href="#Tue"><input  id="Tuesday" class="button" type="submit" value="Tu"></a>
-              <a href="#Wed"><input  id="Wednesday" class="button" type="submit" value="We"></a>
-              <a href="#Thu"><input  id="Thursday" class="button" type="submit" value="Th"></a>
-              <a href="#Fri"><input  id="Friday" class="button" type="submit" value="Fr"></a>
-              <a href="#Sat"><input  id="Saturday" class="button" type="submit" value="Sa"></a>
-              <a href="#Sun"><input  id="Sunday" class="button" type="submit" value="Su"></a>
-          </div>
-          <div id="disRecipe">
-              
-          </div>
-      </section>
+  <!-- Container -->
+  <div class="container">
+
+    <!-- Header -->
+    <header class="has-text-centered">
+      <!-- Logo -->
+      <img id="logo" src="assets/logo/logo 4.jpg" alt="MagicMenu logo">
+      <!-- Title -->
+      <h1 class="title is-1">MagicMenu</h1>
     </header>
 
     <!--main middle section joseph and shawn-->
     <main>
-        
 
-        <!--joseph buttons and days-->
-        <section>
-            <div id="Day-of-week" class="container box has-text-centered is-size-2">
-                Day of week
+
+    <!--joseph buttons and days-->
+<section>
+  <div id="Day-of-week" class="container box has-text-centered is-size-2">
+    Day of week
+  </div>
+
+  <div class="buttons has-addons is-centered">
+    <a class="button is-info" href="#Mon" id="Monday">Mo</a>
+    <a class="button is-info" href="#Tue" id="Tuesday">Tu</a>
+    <a class="button is-info" href="#Wed" id="Wednesday">We</a>
+    <a class="button is-info" href="#Thu" id="Thursday">Th</a>
+    <a class="button is-info" href="#Fri" id="Friday">Fr</a>
+    <a class="button is-info" href="#Sat" id="Saturday">Sa</a>
+    <a class="button is-info" href="#Sun" id="Sunday">Su</a>
+  </div>
+</section>
+
+       <!--shawn images and info box-->
+      <section>
+        <div
+          style="height:500px;width:500px;border:2px solid; font:20px gerogia, garamond, serif;overflow:auto;margin-left:auto;margin-right:auto">
+
+          <Section id="Mon" class="Mon">
+            <h2>Monday</h2>
+            <!-- <div id="nutrition-label">Nutrition</div> -->
+          </Section>
+
+          <Section id="Tue" class="Tue">
+            <h2>Tuesday</h2>
+          </Section>
+
+          <Section id="Wed" class="Wed">
+            <h2>Wednesday</h2>
+          </Section>
+
+          <Section id="Thu" class="Thu">
+            <h2>Thursday</h2>
+          </Section>
+
+          <Section id="Fri" class="Fri">
+            <h2>Friday</h2>
+          </Section>
+
+          <Section id="Sat" class="Sat">
+            <h2>Saturday</h2>
+          </Section>
+
+          <Section id="Sun" class="Sun">
+            <h2>Sunday</h2>
+          </Section>
+
+      </section>
+
+      <button class="Generate">Generate</button>
+
+      <!--Cocktail section madison-->
+
+      <section>
+        <div>
+          <h2>Cocktail Drink: </h2>
+          <button id="cocktailButton">Click for Cocktail Option: </button>
+        </div>
+        <div id="cocktail"></div>
+      </section>
+
+
+      <!--Alergies and Preferences -->
+
+
+      <section>
+        <div class="container">
+          <div class="columns">
+            <div class="column is-half">
+              <h3 class="title is-3">Allergies</h3>
+              <div class="buttons">
+                <button class="button is-rounded"> Dairy</button>
+                <button class="button is-rounded"> Gluten</button>
+                <button class="button is-rounded"> Nuts</button>
+                <button class="button is-rounded"> Seafood</button>
+                <button class="button is-rounded"> Eggs</button>
+                <button class="button is-rounded"> Soy</button>
+              </div>
             </div>
-
-        </section>
-
-        <!--shawn images and info box-->
-        <section>
-            <div style="height:500px;width:500px;border:2px solid; font:20px gerogia, garamond, serif;overflow:auto;margin-left:auto;margin-right:auto">
-
-                <Section id="Mon" class="Mon">
-                    <h2>Monday</h2>
-                    <!-- <div id="nutrition-label">Nutrition</div> -->
-                </Section>
-
-                <Section id="Tue" class="Tue">
-                    <h2>Tuesday</h2>
-                </Section>
-
-                <Section id="Wed" class="Wed">
-                    <h2>Wednesday</h2>
-                </Section>
-
-                <Section id="Thu" class="Thu">
-                    <h2>Thursday</h2>
-                </Section>
-        
-                <Section id="Fri" class="Fri">
-                    <h2>Friday</h2>
-                </Section>
-
-                <Section id="Sat" class="Sat">
-                    <h2>Saturday</h2>
-                </Section>
-
-                <Section id="Sun" class="Sun">
-                  <h2>Sunday</h2>
-                </Section>
-
-        </section>
-
-        <button class="Generate">Generate</button>
-        <!-- <button class="Refresh">Refresh</button> -->
-
-        <!-- david options and selections-->
-
-          <!-- <p>Select the types of food that you want to exclude from the menu:</p> -->
-
-        <!-- <section>
-          <p>Select the types of food that you want to exclude from the menu:</p>
-          <div class="checkboxes">
-            <label><input type="checkbox" name="food" value="dairy">Dairy</label>
-            <label><input type="checkbox" name="food" value="gluten">Gluten</label>
-            <label><input type="checkbox" name="food" value="nuts">Nuts</label>
-            <label><input type="checkbox" name="food" value="seafood">Seafood</label>
-            <label><input type="checkbox" name="food" value="eggs">Eggs</label>
-            <label><input type="checkbox" name="food" value="soy">Soy</label>
+            <div class="column is-half">
+              <h3 class="title is-3">Preferences</h3>
+              <div class="buttons">
+                <button class="button is-info is-outlined">Ethnic</button>
+                <button class="button is-info is-outlined">Diet</button>
+                <button class="button is-info is-outlined">Price</button>
+                <button class="button is-info is-outlined">Distance</button>
+                <button class="button is-info is-outlined">Rating</button>
+                <button class="button is-info is-outlined">Random</button>
+              </div>
+            </div>
           </div>
-          <button id="generate">Generate Menu</button>
-          <div id="menu"></div>
-          
-
-        </section> -->
-<!--                       
-        <section>
-            <div class="container">
-                <div class="row">
-                  <div class="col-md-6">
-                    <h3>Allergies</h3>
-                    <div class="buttons">
-                      <button class="btn btn-default"><img src="assets\icons\milk bottle.png" alt="Dairy"> Dairy</button>
-                      <button class="btn btn-default"><img src="assets\icons\gluten-free.png" alt="Gluten"> Gluten</button>
-                      <button class="btn btn-default"><img src="assets\icons\nut.png" alt="Nuts"> Nuts</button>
-                      <button class="btn btn-default"><img src="assets/icons/sea-food.png" alt="Seafood"> Seafood</button>
-                      <button class="btn btn-default"><img src="assets/icons/egg allergy.png" alt="Eggs"> Eggs</button>
-                      <button class="btn btn-default"><img src="assets/icons/soy.png" alt="Soy"> Soy</button>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <h3>Choices</h3>
-                    <div class="buttons">
-                      <button class="btn btn-default">Ethnic</button>
-                      <button class="btn btn-default">Diet</button>
-                      <button class="btn btn-default">Price</button>
-                      <button class="btn btn-default">Distance</button>
-                      <button class="btn btn-default">Rating</button>
-                      <button class="btn btn-default">Random</button>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-        </section> -->
-
-        <!--Cocktail section madison-->
-
-        <section>
-            <div><h2>Cocktail Drink: </h2>
-                <button id="cocktailButton">Click for Cocktail Option: </button>
-            </div>
-            <div id="cocktail"></div>
-        </section>
-        <!--future buttons when min is met-->
+        </div>
+      </section>
+      
+      
+      
+      </section>
 
     </main>
 
-  <!-- Added link to the jQuery library -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    
+    <!-- Added link to the jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
     <script src="assets/javascript/script.js"></script>
 </body>
+
 </html>
