@@ -1,5 +1,13 @@
 /*Styling for the options and selections section */
-
+/*Style the logo */
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+  border-radius: 25%;
+  border-style: outset;
+}
 body{
   margin: 0;
 }
@@ -94,6 +102,8 @@ body{
 
 
 
+
+
 p{
   display: flex;
   justify-content: center;
@@ -102,6 +112,14 @@ p{
   font-style: oblique;
   font-weight: 600;
 }
+p1{
+  font-weight: 700;
+  font-size: 80px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 img{
   display: flex;
@@ -128,9 +146,9 @@ ul{
 }
 
 li{
-  list-style-type: none;
-  text-align: center;
-  margin-top: 10px;
+  list-style-type:circle;
+  justify-content: center;
+  margin-top: 10px; 
   font-size: 20px;
 }
 
