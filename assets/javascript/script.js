@@ -118,23 +118,63 @@ function getCityGrocery() {
     var cocktailAPI = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
     fetch(cocktailAPI)
-    .then(function(response) {
+      .then(function (response) {
         return response.json();
-    })
-        .then(function(data) {
-          console.log(data);
+      })
+      .then(function (data) {
+        // Check if the data has drinks and pick the first one
+        if (data && data.drinks && data.drinks.length > 0) {
+          let drink = data.drinks[0];
+          console.log(drink);
 
-          var randNumber = Math.floor(Math.random() * data.drinks.length);
-          var drinkRecipe = data.drinks[randNumber].strInstructions;
+          // Create elements for the drink name, image, link and ingredients list
+          let drinkName = document.createElement('p1');
+          let drinkImg = document.createElement('img');
+          let drinkLink = document.createElement('a');
+          let drinkIngredients = document.createElement('ul');
 
-          console.log(drinkRecipe);
+          drinkName.textContent = drink.strDrink;
 
-          var drinkImg = document.createElement('img');
-          drinkImg.setAttribute("src", data.drinks[randNumber].strDrinkThumb);
+          drinkImg.setAttribute("src", drink.strDrinkThumb);
+
+          drinkLink.href = `https://www.thecocktaildb.com/drink/${drink.idDrink}`;
+          drinkLink.innerHTML = `Click here for more details`;
+
+          // Loop through the properties of the drink object and find the ingredients and measures
+          for (let key in drink) {
+            if (key.startsWith('strIngredient') && drink[key]) {
+              // Get the corresponding measure for the ingredient
+              let measureKey = key.replace('strIngredient', 'strMeasure');
+              let measure = drink[measureKey] || '';
+              // Create and append an element for the ingredient and measure
+              let drinkIng = document.createElement('li');
+              drinkIng.textContent = `${measure} ${drink[key]}`;
+              drinkIngredients.appendChild(drinkIng);
+            }
+          }
+
+          // Append the elements to the container element
+          container.append(drinkName);
           container.append(drinkImg);
- 
-
-            // container.append(`<li>Drink Name: ${data.drinks[randNumber].strDrink}</li>`);
+          container.append(drinkLink);
+          container.append(drinkIngredients);
+        } else {
+          // Handle the case when the data is empty or invalid
+          console.error('No data or invalid data from the API');
+        }
+      })
+      .catch(function (error) {
+        // Handle the case when the fetch fails
+        console.error('Fetch error: ' + error);
+      })
+  }
+})
+        
+    //   .catch(function (error) {
+    //     // Handle the case when the fetch fails
+    //     console.error('Fetch error: ' + error);
+    //   })
+    //         // container.append(`<li>Drink Name: ${data.drinks[randNumber].strDrink}</li>`);
             // container.append(`<li>Alcoholic: ${data.drinks[randNumber].strAlcoholic}</li>`);
             // container.append(`<li>Instructions: ${data.drinks[randNumber].strInstructions}</li>`);
 
@@ -150,15 +190,15 @@ function getCityGrocery() {
             
             //     container.appendChild(cocktailIng);
             // }
-            container.append(`<p id="cocktailFont" >Drink Name: ${data.drinks[randNumber].strDrink}</p>`);
-            container.append(`<p id="cocktailFont" >Alcoholic: ${data.drinks[randNumber].strAlcoholic}</p>`);
-            container.append(`<p>Instructions: ${data.drinks[randNumber].strInstructions}</p>`);
+            // container.append(`<p id="cocktailFont" >Drink Name: ${data.drinks[randNumber].strDrink}</p>`);
+            // container.append(`<p id="cocktailFont" >Alcoholic: ${data.drinks[randNumber].strAlcoholic}</p>`);
+            // container.append(`<p>Instructions: ${data.drinks[randNumber].strInstructions}</p>`);
 
 
-        })
-}    
+        //})
+// }    
 
-});
+// });
 
 
 // // example link with selections: 
