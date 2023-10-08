@@ -1,4 +1,8 @@
 /*Styling for the options and selections section */
+
+body{
+  margin: 0;
+}
 .btn {
     background-color:#96D1CD; /* Blue background */
     border:transparent; /* Add border */
@@ -31,6 +35,7 @@
   
   }
   
+
   /* Style the headings */
   h3 {
     color: white; /* White text */
@@ -56,10 +61,14 @@
 
   .Generate, .Refresh{
     cursor: pointer;
-   left: 30%;
-   margin-left:10% ;
-   position: relative;
     font-size: 25px;
+    border: solid 1px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:35px ;
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px ;
   }
 
   h2{
@@ -68,13 +77,6 @@
     border-bottom:thick double #89CFF0;
     margin: 30px;
     font-size: 30px;
-  }
-
-  .tile{
-margin: 0;
-position: absolute;
-top: 25%;
-margin-left: 20%;
   }
 
   h1{
@@ -90,3 +92,92 @@ margin-left: 20%;
 
   /*End Options and Selections Section*/
 
+
+
+p{
+  display: flex;
+  justify-content: center;
+  border-bottom:thick double #89a4f0;
+  margin: 70px;
+  font-style: oblique;
+  font-weight: 600;
+}
+
+img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+#cocktailButton{
+cursor: pointer;
+font-size:25px ;
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 30px;
+border: 1px solid;
+border-radius: 25px;
+box-shadow: 5px 5px 10px;
+}
+
+ul{
+  margin-top: 9px;
+  margin-left:15% ;
+}
+
+li{
+  list-style-type: none;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.Generate:hover,#cocktailButton:hover {
+  background:#89a4f0;
+  transform: rotate(3deg);
+}
+
+h1{
+padding-top:20px;
+color: black;
+font-family:serif;
+font-style: italic;
+}
+
+d{
+  font-style: italic;
+  font-family: sans-serif;
+}
+
+.tile{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+a{
+margin-left: 2px;
+
+}
+#box{
+  height: 500px;
+  width: 500px;
+  border: 2px solid;
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  overflow: auto;
+  margin-left:auto ;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 900px){
+section{
+  width: 100%;
+}
+#box{
+  width:400px;
+}
+}

@@ -52,10 +52,17 @@ function getMondayRecipe(recipe) {
         var nutritionLabel = document.createElement('div');
         nutritionLabel.classList.add('nutrition-label')
           nutritionLabel.innerHTML = `
+
+          <ul>Calories: ${Math.trunc(data.hits[i].recipe.calories)} </ul>
+          <ul>Protein: ${Math.trunc(data.hits[i].recipe.totalNutrients.PROCNT.quantity)} </ul>
+          <ul>Carbs: ${Math.trunc(data.hits[i].recipe.totalNutrients.CHOCDF.quantity)} </ul>
+          <ul>Fat: ${Math.trunc(data.hits[i].recipe.totalNutrients.FAT.quantity)} </ul>
+
           <li>Calories: ${Math.trunc(data.hits[randomNumber].recipe.calories)} </li>
           <li>Protein: ${Math.trunc(data.hits[randomNumber].recipe.totalNutrients.PROCNT.quantity)} </li>
           <li>Carbs: ${Math.trunc(data.hits[randomNumber].recipe.totalNutrients.CHOCDF.quantity)} </li>
           <li>Fat: ${Math.trunc(data.hits[randomNumber].recipe.totalNutrients.FAT.quantity)} </li>
+
           `
 
         resLabel.textContent = data.hits[randomNumber].recipe.label;
@@ -73,9 +80,15 @@ function getMondayRecipe(recipe) {
         dayOFWeek.appendChild(moreDetails);
         
 
+
+        for (var j = 0; j < data.hits[1].recipe.ingredientLines.length; j++) {
+            var labelList = data.hits[1].recipe.ingredientLines[j];
+            var resIng = document.createElement('ul');
+
         for (var j = 0; j < data.hits[randomNumber].recipe.ingredientLines.length; j++) {
             var labelList = data.hits[randomNumber].recipe.ingredientLines[j];
             var resIng = document.createElement('li');
+
             
             resIng.textContent = labelList;
         
@@ -120,6 +133,11 @@ function getCityGrocery() {
           drinkImg.setAttribute("src", data.drinks[randNumber].strDrinkThumb);
           container.append(drinkImg);
  
+
+            container.append(`<li>Drink Name: ${data.drinks[randNumber].strDrink}</li>`);
+            container.append(`<li>Alcoholic: ${data.drinks[randNumber].strAlcoholic}</li>`);
+            container.append(`<li>Instructions: ${data.drinks[randNumber].strInstructions}</li>`);
+
             container.append(`<p>Drink Name: ${data.drinks[randNumber].strDrink}</p>`);
 
             //loop for ingridient list
@@ -135,6 +153,7 @@ function getCityGrocery() {
 
             container.append(`<p>Alcoholic: ${data.drinks[randNumber].strAlcoholic}</p>`);
             container.append(`<p>Instructions: ${data.drinks[randNumber].strInstructions}</p>`);
+
 
         })
 }    
