@@ -101,7 +101,7 @@ function getMondayRecipe(recipe) {
         
       
       
-        })  
+}})  
     
 }
 
@@ -134,11 +134,11 @@ function getCityGrocery() {
           container.append(drinkImg);
  
 
-            container.append(`<li>Drink Name: ${data.drinks[randNumber].strDrink}</li>`);
-            container.append(`<li>Alcoholic: ${data.drinks[randNumber].strAlcoholic}</li>`);
-            container.append(`<li>Instructions: ${data.drinks[randNumber].strInstructions}</li>`);
+            // container.append(`<li>Drink Name: ${data.drinks[randNumber].strDrink}</li>`);
+            // container.append(`<li>Alcoholic: ${data.drinks[randNumber].strAlcoholic}</li>`);
+            // container.append(`<li>Instructions: ${data.drinks[randNumber].strInstructions}</li>`);
 
-            container.append(`<p>Drink Name: ${data.drinks[randNumber].strDrink}</p>`);
+            
 
             //loop for ingridient list
 
@@ -150,8 +150,8 @@ function getCityGrocery() {
             
             //     container.appendChild(cocktailIng);
             // }
-
-            container.append(`<p>Alcoholic: ${data.drinks[randNumber].strAlcoholic}</p>`);
+            container.append(`<p id="cocktailFont" >Drink Name: ${data.drinks[randNumber].strDrink}</p>`);
+            container.append(`<p id="cocktailFont" >Alcoholic: ${data.drinks[randNumber].strAlcoholic}</p>`);
             container.append(`<p>Instructions: ${data.drinks[randNumber].strInstructions}</p>`);
 
 
