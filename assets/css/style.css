@@ -1,268 +1,201 @@
+/*Styling for the options and selections section */
 /*Style the logo */
 #logo {
-  display: flex;
-  width: 25%;
-  border-radius: 25%;
-  border-style: outset;
-  background-color: rgb(250, 229, 221);
-}
-
-header {
-  padding-top: 25px;
-  background-color: rgb(250, 229, 221);
-}
-
-#body {
-  margin: 5%;
-  border-style: solid;
-  border-width: thick;
-  border-color: darkred;
-}
-
-.footer {
-  background-color: rgb(250, 229, 221);
-}
-
-.btn {
-  background-color: #96D1CD;
-  /* Blue background */
-  border: transparent;
-  /* Add border */
-  border-radius: 10%;
-  /* Radius to form oval*/
-  color: white;
-  /* White text */
-  padding: 12px 16px;
-  /* Some padding */
-  font-size: 16px;
-  /* Set a font size */
-  cursor: pointer;
-  /* Mouse pointer on hover */
-  outline-offset: 4px;
-  /*Add some space around the outline*/
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    /*inner top highlight */
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1),
-    /*inner bottom shadow*/
-    0 2px 2px rgba(0, 0, 0, 0.2),
-    /*outer top shadow*/
-    0 2px 4px rgba(0, 0, 0, 0.1),
-    /*outer bottom shadow*/
-    0 6px 12px rgba(0, 0, 0, 0.1);
-  /*outer bottom shadow*/
-  transform: translate(-6px);
-  /*Add a smooth transition */
-}
-
-/* Darker background on mouse-over */
-.btn:hover {
-  background-color: #FFB695;
-  transform: translateY(-4px) rotateX(10deg) rotateY(-10deg);
-  /* Tilt the button */
-}
-
-/* Style the images */
-.btn img {
-  width: 20px;
-  /* Set a width */
-  height: 20px;
-  /* Set a height */
-  margin-right: 10px;
-  /* Add some space between the image and the text */
-  vertical-align: middle;
-  /* Align the image and the text vertically */
-}
-
-/* Style the headings */
-h3 {
-  color: white;
-  /* White text */
-  margin: 10px 0;
-  /* Add some margin */
-}
-
-/* Style the container */
-.container {
-  background-color: #333;
-  /* Dark background */
-  padding: 20px;
-  /* Add some padding */
-}
-
-/* Style the row */
-.row {
-  display: flex;
-  /* Use flexbox */
-}
-
-/* Style the columns */
-.col-md-6 {
-  flex: 50%;
-  /* Take half of the available space */
-}
-
-.Generate {
-  background-color: rgb(250, 229, 221);
-  cursor: pointer;
-  font-size: 35px;
-  border: solid 1px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 35px;
-  border-radius: 25px;
-  box-shadow: 5px 5px 10px;
+  width: 15%;
+  border-radius: 25%;
+  border-style: outset;
 }
+body{
+  margin: 0;
+}
+.btn {
+    background-color:#96D1CD; /* Blue background */
+    border:transparent; /* Add border */
+    border-radius: 10%; /* Radius to form oval*/
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    outline-offset: 4px; /*Add some space around the outline*/
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), /*inner top highlight */
+                inset 0 -1px 0 rgba(0,0, 0, 0.1), /*inner bottom shadow*/
+                0 2px  2px rgba(0,0, 0, 0.2), /*outer top shadow*/
+                0 2px  4px rgba(0, 0, 0, 0.1), /*outer bottom shadow*/
+                0 6px 12px rgba(0, 0, 0, 0.1); /*outer bottom shadow*/
+    transform: translate(-6px); /*Add a smooth transition */
+  }
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: #FFB695;
+    transform: translateY(-4px) rotateX(10deg) rotateY(-10deg); /* Tilt the button */
+  }
+  
+  /* Style the images */
+  .btn img {
+    width: 20px; /* Set a width */
+    height: 20px; /* Set a height */
+    margin-right: 10px; /* Add some space between the image and the text */
+    vertical-align: middle; /* Align the image and the text vertically */
+  
+  }
+  
 
-h2 {
+  /* Style the headings */
+  h3 {
+    color: white; /* White text */
+    margin: 10px 0; /* Add some margin */
+  }
+  
+  /* Style the container */
+  .container {
+    background-color: #333; /* Dark background */
+    padding: 20px; /* Add some padding */
+  }
+  
+  /* Style the row */
+  .row {
+    display: flex; /* Use flexbox */
+  }
+  
+  /* Style the columns */
+  .col-md-6 {
+    flex: 50%; /* Take half of the available space */
+  }
+
+
+  .Generate, .Refresh{
+    cursor: pointer;
+    font-size: 25px;
+    border: solid 1px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:35px ;
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px ;
+  }
+
+  h2{
+    display: flex;
+    justify-content: center;
+    border-bottom:thick double #89CFF0;
+    margin: 30px;
+    font-size: 30px;
+  }
+
+  h1{
+    background-color: #89CFF0;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 100px;
+  }
+    .container{
+    color: #89CFF0;
+  }
+
+  /*End Options and Selections Section*/
+
+
+
+
+
+p{
   display: flex;
   justify-content: center;
-  border-bottom: thick double #89CFF0;
-  margin: 30px;
-  font-size: 30px;
-}
-
-h1 {
-  background-color: rgb(250, 229, 221);
-  font-size: 40px;
-  font-weight: bold;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  height: 100px;
-}
-
-.container {
-  color: #89CFF0;
-}
-
-p {
-  justify-content: center;
-  display: flex;
-  border-bottom: thick double #89a4f0;
+  border-bottom:thick double #89a4f0;
   margin: 70px;
-  font-size: 40px;
   font-style: oblique;
   font-weight: 600;
 }
-
-p1 {
-  display: flex;
-  justify-content: center;
+p1{
   font-weight: 700;
   font-size: 80px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-p2 {
-  display: flex;
-  justify-content: center;
-  font-size: 25px;
-  margin-top: 15px;
-}
 
-img {
-  width: 70%;
+img{
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-bottom: 25px;
-  border-radius: 15%;
-  border-style: groove;
-  box-shadow: 10px 10px 5px #333;
 }
 
-#cocktailButton {
-  background-color: rgb(250, 229, 221);
-  cursor: pointer;
-  font-size: 35px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-  border: 1px solid;
-  border-radius: 25px;
-  box-shadow: 5px 5px 10px;
+#cocktailButton{
+cursor: pointer;
+font-size:25px ;
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 30px;
+border: 1px solid;
+border-radius: 25px;
+box-shadow: 5px 5px 10px;
 }
 
-#cocktail {
-  display: flex;
+ul{
+  margin-top: 9px;
+  margin-left:15% ;
+}
+
+li{
+  list-style-type:circle;
   justify-content: center;
-  flex-direction: column;
-  text-align: center;
+  margin-top: 10px; 
+  font-size: 20px;
 }
 
-.nutrition-label {
-  margin-top: 20px;
-  font-size: 25px;
-}
-
-ul {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  font-size: 30px;
-}
-
-li {
-  list-style-type: none;
-  justify-content: center;
-  font-size: 30px;
-}
-
-.Generate:hover,
-#cocktailButton:hover {
-  background: #89a4f0;
+.Generate:hover,#cocktailButton:hover {
+  background:#89a4f0;
   transform: rotate(3deg);
 }
 
-h1 {
-  padding-top: 20px;
-  color: black;
-  font-family: serif;
-  font-style: italic;
+h1{
+padding-top:20px;
+color: black;
+font-family:serif;
+font-style: italic;
 }
 
-d {
+d{
   font-style: italic;
   font-family: sans-serif;
 }
 
-.tile {
+.tile{
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: center;
+  
 }
 
-a {
-  margin-right: 2px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  color: rgb(86, 86, 210);
-  border-bottom: thick;
-  text-decoration: underline;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
+a{
+margin-left: 2px;
 
-#box {
-  background-color: rgb(250, 229, 221);
-  height: auto;
-  width: 1000px;
+}
+#box{
+  height: 500px;
+  width: 500px;
   border: 2px solid;
-  font-size: 25px;
+  font-size: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   overflow: auto;
-  margin-left: auto;
+  margin-left:auto ;
   margin-right: auto;
 }
 
-@media screen and (max-width: 900px) {
-  section {
-    width: 100%;
-  }
-
-  #box {
-    width: 100%;
-  }
+@media screen and (max-width: 900px){
+section{
+  width: 100%;
+}
+#box{
+  width:400px;
+}
 }
