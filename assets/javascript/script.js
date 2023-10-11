@@ -17,6 +17,14 @@ $(document).ready(function () {
         getMondayRecipe()
     })
 
+    //scroll back to top button
+    $('.top').on('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
     // pulls random recipes from api
     function getMondayRecipe(recipe) {
 
@@ -44,6 +52,7 @@ $(document).ready(function () {
                     <ul>Protein: ${Math.trunc(data.hits[randomNumber].recipe.totalNutrients.PROCNT.quantity)} </ul>
                     <ul>Carbs: ${Math.trunc(data.hits[randomNumber].recipe.totalNutrients.CHOCDF.quantity)} </ul>
                     <ul>Fat: ${Math.trunc(data.hits[randomNumber].recipe.totalNutrients.FAT.quantity)} </ul>
+
                       `
 
                     //   link to recipe details
