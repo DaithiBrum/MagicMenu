@@ -207,11 +207,14 @@ saveBtn.addEventListener("click", function (event) {
     storeRecipes();
     renderFutureRecipes();
 
-    $("#moreRecipes").keypress(function(event) {
-        if(event.which == 13) {
-            $("#saveBtn").click();
-        }
-    })
+   
 })
 
 init()
+
+// be able to hit enter button to click save button
+$("#moreRecipes").keypress(function(event) {
+    if(event.which == 13) {
+        $("#saveBtn").click();
+    }
+})
