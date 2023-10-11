@@ -207,6 +207,11 @@ saveBtn.addEventListener("click", function (event) {
     storeRecipes();
     renderFutureRecipes();
 
+    $("#moreRecipes").keypress(function(event) {
+        if(event.which == 13) {
+            $("#saveBtn").click();
+        }
+    })
 })
 
 init()
