@@ -46,7 +46,8 @@ h3 {
   /* Take half of the available space */
 }
 
-.button {
+.button,
+.Generate {
   background-color: rgb(250, 229, 221);
   cursor: pointer;
   font-size: 24px;
@@ -59,14 +60,16 @@ h3 {
   box-shadow: 5px 5px 10px;
 }
 
+.top {
   background-color: rgb(250, 229, 221);
   cursor: pointer;
-  font-size: 35px;
+  font-size: 20px;
   border: solid 1px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 35px;
+  margin-top: 25px;
+  margin-bottom: 15px;
   border-radius: 25px;
   box-shadow: 5px 5px 10px;
 }
@@ -76,7 +79,8 @@ h2 {
   justify-content: center;
   border-bottom: thick double #89CFF0;
   margin: 30px;
-  font-size: 30px;
+  margin-top: 90px;
+  font-size: 50px;
 }
 
 h1 {
@@ -167,6 +171,7 @@ li {
 }
 
 .Generate:hover,
+.top:hover,
 #cocktailButton:hover {
   background: #89a4f0;
   transform: rotate(3deg);
