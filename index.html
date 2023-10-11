@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Acme&displa=swap" rel="stylesheet">
   <title>MagicMenu</title>
 </head>
 
@@ -16,16 +17,16 @@
     <!-- Logo -->
     <img id="logo" src="assets/logo/logo 4.jpg" alt="MagicMenu logo">
     <!-- Title -->
-    <h1 class="title is-1">MagicMenu</h1>
+    <h1 class="title is-1">Magic Menu</h1>
   </header>
 
   <!-- Interactive day of week navigation -->
   <main>
     <section1>
       <div id="Day-of-week" class="container box has-text-centered is-size-1">
-        <d>Day of week</d>
+        <h1>Day of week</h1>
         <div class="tile is-horizontal">
-          <a href="#Mon"> <input id="Monday" class="button" type="submit" value="Mo"></a>
+          <a href="#Mon"><input id="Monday" class="button" type="submit" value="Mo"></a>
           <a href="#Tue"><input id="Tuesday" class="button" type="submit" value="Tu"></a>
           <a href="#Wed"><input id="Wednesday" class="button" type="submit" value="We"></a>
           <a href="#Thu"><input id="Thursday" class="button" type="submit" value="Th"></a>
@@ -45,73 +46,64 @@
 
         <Section id="Mon" class="Mon">
           <h2>Monday</h2>
+
         </Section>
-        <div>
-          <button class="top">back to top</button>
-        </div>
 
         <Section id="Tue" class="Tue">
           <h2>Tuesday</h2>
         </Section>
-        <div>
-          <button class="top">back to top</button>
-        </div>
 
         <Section id="Wed" class="Wed">
           <h2>Wednesday</h2>
         </Section>
-        <div>
-          <button class="top">back to top</button>
-        </div>
 
         <Section id="Thu" class="Thu">
           <h2>Thursday</h2>
         </Section>
-        <div>
-          <button class="top">back to top</button>
-        </div>
 
         <Section id="Fri" class="Fri">
           <h2>Friday</h2>
         </Section>
-        <div>
-          <button class="top">back to top</button>
-        </div>
 
         <Section id="Sat" class="Sat">
           <h2>Saturday</h2>
         </Section>
-        <div>
-          <button class="top">back to top</button>
-        </div>
 
         <Section id="Sun" class="Sun">
           <h2>Sunday</h2>
         </Section>
-        <div>
-          <button class="top">back to top</button>
-        </div>
 
     </section>
 
-    <section>
+    <!-- Contrail Drink section-->
+    <section class="cocktaildrink has-text-centered">
       <div>
-        <h2>Cocktail Drink: </h2>
+        <h1>Cocktail Drink: </h1>
         <button id="cocktailButton">Click for Cocktail Option </button>
       </div>
       <div id="cocktail"></div>
     </section>
 
-    <section>
-      <div>
-        <button class="top">back to top</button>
-      </div>
-    </section>
-
   </main>
 
-  <footer class="footer">
   
+<!-- Special Diet Links-->
+<section class="special-diets has-text-centered">
+  <div class="col-md-6">
+    <h1>Special Diets</h1>
+    <button class="button" onclick="window.location.href='https://blog.paleohacks.com/keto-meal-plan/'"
+      target="_blank">Keto Diet</button>
+    <button class="button" onclick="window.location.href='https://www.wholefoodsmarket.com/special-diets/vegan/vegan-meal-plan'"
+      target="_blank">Vegan Diet</button>
+    <button class="button"onclick="window.location.href='https://www.eatingwell.com/article/290771/7-day-1200-calorie-low-carb-meal-plan-to-lose-weight/'"
+      target="_blank">Low Carb</button>
+    <button class="button" onclick="window.location.href='https://www.eatingwell.com/article/8076297/7-day-anti-inflammatory-low-sodium-meal-plan-for-high-blood-pressure/'"
+      target=_blank">Anti-inflamatory</button>
+    <button class="button" onclick="window.location.href='https://mediterraneanplan.com/quiz/?msclkid=8eda0be951891ced279a6ecda6062c8a&utm_source=bing&utm_medium=cpc&utm_campaign=Mediterranean%20Diet-USA&utm_term=mediterranean%20diet&utm_content=Mediterranean%20Diet%20%5BMost%20Profitable%20Keywords%5D'"
+      target=_blank">Meditoranian</button>
+  </section>
+ 
+  <footer class="footer has-text-centered"><h3>MagicMenu­™ LLC ©2023 All Rights Reserved</h3>
   </footer>
 
   <!-- Added link to the jQuery library -->
