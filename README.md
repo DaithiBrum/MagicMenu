@@ -16,15 +16,11 @@ To use this website its fairly simple all you have to do is go to the website ei
 
 #Credits
 this project was working on by Joseph Blair, David Liddle, Madison Reynolds, and Shawn Clarke.
-![Screenshot 2023-10-11 160930](https://github.com/DaithiBrum/MagicMenu/assets/139307719/6db3acb2-0a2f-4e4f-b56b-5e0346717ce8)
-![Screenshot 2023-10-11 160958](https://github.com/DaithiBrum/MagicMenu/assets/139307719/a488b3dc-57ed-4264-ab4a-4e5b982bbb5a)
-![Screenshot 2023-10-11 161004](https://github.com/DaithiBrum/MagicMenu/assets/139307719/f7eec1b9-342b-4f8f-8e71-a374acf1da3b)
-![Screenshot 2023-10-11 161152](https://github.com/DaithiBrum/MagicMenu/assets/139307719/5e8cdb6f-2070-4c75-905b-d7e87fb30039)
-![Screenshot 2023-10-11 161300](https://github.com/DaithiBrum/MagicMenu/assets/139307719/c9877ac3-da63-4610-802e-f1d8a31d13d6)
-![Screenshot 2023-10-11 161306](https://github.com/DaithiBrum/MagicMenu/assets/139307719/e3cfe70c-3ad4-4716-be63-f048d5051091)
-![Screenshot 2023-10-11 161349](https://github.com/DaithiBrum/MagicMenu/assets/139307719/28a7706d-de42-4818-8b9b-98a3582b618b)
-![Screenshot 2023-10-11 161436](https://github.com/DaithiBrum/MagicMenu/assets/139307719/1fae0245-2020-41e9-b1dc-0b6fdd68d8ce)
-![Screenshot 2023-10-11 161442](https://github.com/DaithiBrum/MagicMenu/assets/139307719/da6ebabd-bbd7-4cc2-a6ba-b89290e1ef9c)
-![Screenshot 2023-10-11 161449](https://github.com/DaithiBrum/MagicMenu/assets/139307719/57a35096-a319-4758-a755-45228e790dfe)
-![Screenshot 2023-10-11 161509](https://github.com/DaithiBrum/MagicMenu/assets/139307719/2e784133-3cb3-4bbe-8208-2480856a1070)
-![Screenshot 2023-10-11 161514](https://github.com/DaithiBrum/MagicMenu/assets/139307719/32f779f4-6caa-4d32-bcc6-aa2344512e5c)
+
+
+![Screenshot 2023-10-11 161436](https://github.com/DaithiBrum/MagicMenu/assets/139307719/737095d1-c770-4de5-b2ef-9c12cb5f3adf)
+![Screenshot 2023-10-11 161442](https://github.com/DaithiBrum/MagicMenu/assets/139307719/e149b14e-d4ea-4310-823b-cbf276018824)
+![Screenshot 2023-10-11 161449](https://github.com/DaithiBrum/MagicMenu/assets/139307719/05cbe30c-f561-491e-8219-0d15c8f61784)
+![Screenshot 2023-10-11 161504](https://github.com/DaithiBrum/MagicMenu/assets/139307719/a818cf98-0ae6-40d1-a50c-eef3a037771c)
+![Screenshot 2023-10-11 161509](https://github.com/DaithiBrum/MagicMenu/assets/139307719/888a523c-0f50-450c-8986-9fab319f478a)
+![Screenshot 2023-10-11 161514](https://github.com/DaithiBrum/MagicMenu/assets/139307719/66536cbc-c008-48d6-baa0-247ef2ade1e5)
