@@ -3,6 +3,7 @@ var edApiKey = 'cb87a3ad2d2758cc23fc980f34800143';
 var edApiId = '0779033c';
 var allDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
+
 $(document).ready(function () {
 
     $('.Generate').on('click', function () {
@@ -35,11 +36,15 @@ $(document).ready(function () {
                 return response.json();
             })
             .then(function (data) {
+                console.log(data);
 
                 for (var i = 0; i < allDays.length; i++) {
 
                     var randomNumber = Math.floor(Math.random() * data.hits.length);
                     var recipe = data.hits[randomNumber].recipe;
+
+                    console.log(recipe);
+                    
                     var dayOFWeek = document.getElementById(allDays[i]);
                     var resLabel = document.createElement('p');
                     var resImg = document.createElement('img');
@@ -82,6 +87,7 @@ $(document).ready(function () {
                         dayOFWeek.appendChild(nutritionLabel)
                     }
                 }
+
             })
     }
 
@@ -151,3 +157,56 @@ $(document).ready(function () {
     }
 })
 
+var moreRecipesInput = document.querySelector('#moreRecipes');
+var futureRecipes = document.querySelector('#futureRecipes')
+
+var listOfFutureRecipes = [];
+
+function renderFutureRecipes() {
+    futureRecipes.innerHTML = "";
+
+    for (var l = 0; l < listOfFutureRecipes.length; l++) {
+        var recipeList = listOfFutureRecipes[l];
+
+        var li = document.createElement("li");
+        li.textContent = recipeList;
+        li.setAttribute("data-index", l);
+
+        futureRecipes.appendChild(li);
+    }
+}
+
+function init() {
+
+    var storedRecipes = JSON.parse(localStorage.getItem("listOfFutureRecipes"));
+
+    if (storedRecipes !== null) {
+        listOfFutureRecipes = storedRecipes;
+    }
+
+    renderFutureRecipes();
+}
+
+function storeRecipes() {
+    localStorage.setItem("listOfFutureRecipes", JSON.stringify(listOfFutureRecipes));
+}
+
+saveBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    var moreRecipes = moreRecipesInput.value.trim();
+
+    if (moreRecipes === "") {
+        return;
+    }
+
+    listOfFutureRecipes.push(moreRecipes);
+    moreRecipesInput.value = "";
+
+
+    storeRecipes();
+    renderFutureRecipes();
+
+})
+
+init()
