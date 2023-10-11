@@ -257,6 +257,21 @@ a {
   margin-right: auto;
 }
 
+#morRecipes {
+  font-size: 23px;
+  margin-left: 35px;
+}
+
+#saveBtn {
+  margin-left: 5px;
+}
+
+#futRecipes {
+  margin-top: 25px;
+  font-size: 25px;
+  text-align: center;
+}
+
 @media screen and (max-width: 900px) {
   section {
     width: 100%;
