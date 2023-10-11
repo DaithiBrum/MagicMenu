@@ -18,6 +18,14 @@ $(document).ready(function () {
         getMondayRecipe()
     })
 
+    //scroll back to top button
+    $('.top').on('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
     // pulls random recipes from api
     function getMondayRecipe(recipe) {
 
