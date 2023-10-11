@@ -113,13 +113,27 @@ h3 {
   border-radius: 25px;
   box-shadow: 5px 5px 10px;
 }
+.top{
+  background-color: rgb(250, 229, 221);
+  cursor: pointer;
+  font-size: 20px;
+  border: solid 1px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px;
+}
 
 h2 {
   display: flex;
   justify-content: center;
   border-bottom: thick double #89CFF0;
   margin: 30px;
-  font-size: 30px;
+  margin-top: 90px;
+  font-size: 50px;
 }
 
 h1 {
@@ -138,7 +152,7 @@ p {
   justify-content: center;
   display: flex;
   border-bottom: thick double #89a4f0;
-  margin: 70px;
+  margin: 60px;
   font-size: 40px;
   font-style: oblique;
   font-weight: 600;
@@ -210,7 +224,7 @@ li {
 }
 
 .Generate:hover,
-#cocktailButton:hover {
+#cocktailButton:hover, .top:hover {
   background: #89a4f0;
   transform: rotate(3deg);
 }
