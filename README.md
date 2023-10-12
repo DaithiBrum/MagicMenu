@@ -35,8 +35,8 @@ along the way my team and I have run into many issues mainly revolving around th
 To use this website its fairly simple all you have to do is go to the website either through your desktop or a mobile device and press the genereate option to get your food options if you dont like the options you have you can hit generate again for a new list of items. At the very top of the webpage youll find a set of days each being a button that can be pressed bringing you to that designated day. For the drink options its works the same way generating one drink per click. at the very bottom of the webpage we have links to take you to different websites based on dietary needs or specific types of food one may be looking for.
 
 ## Credits
-this project was worked on by Joseph Blair, David Liddle, Madison Reynolds, and Shawn Clarke.
 
+this project was worked on by Joseph Blair, David Liddle, Madison Reynolds, and Shawn Clarke.
 
 ![Screenshot 2023-10-11 161436](https://github.com/DaithiBrum/MagicMenu/assets/139307719/737095d1-c770-4de5-b2ef-9c12cb5f3adf)
 ![Screenshot 2023-10-11 161442](https://github.com/DaithiBrum/MagicMenu/assets/139307719/e149b14e-d4ea-4310-823b-cbf276018824)
